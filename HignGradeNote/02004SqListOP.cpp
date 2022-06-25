@@ -71,7 +71,7 @@ int deleteElem(Sqlist& L, int p, int& e)//需要改变的变量用引用型
 	--(L.length);
 	return 1;
 }
-int main02004()
+int main()
 {
 	Sqlist L;
 	initList(L);
