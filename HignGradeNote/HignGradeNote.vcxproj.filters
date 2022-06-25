@@ -21,5 +21,14 @@
     <ClCompile Include="02001SequenceList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="02002LNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="02003DLNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="02004SqListOP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

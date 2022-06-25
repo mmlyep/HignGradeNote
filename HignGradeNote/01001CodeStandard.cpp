@@ -34,7 +34,7 @@ void RCR(int R[], int n, int p)
 	}
 	return;
 }
-int main()
+int main01001()
 {
 	int p, i;
 	int R[N], n;

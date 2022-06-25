@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="02001SequenceList.cpp" />
     <ClCompile Include="01001CodeStandard.cpp" />
+    <ClCompile Include="02002LNode.cpp" />
+    <ClCompile Include="02003DLNode.cpp" />
+    <ClCompile Include="02004SqListOP.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
