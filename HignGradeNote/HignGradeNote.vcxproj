@@ -144,6 +144,7 @@
     <ClCompile Include="02002LNode.cpp" />
     <ClCompile Include="02003DLNode.cpp" />
     <ClCompile Include="02004SqListOP.cpp" />
+    <ClCompile Include="02005SingleLinkedListOP.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

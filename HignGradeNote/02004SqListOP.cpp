@@ -50,9 +50,8 @@ int insertElem(Sqlist& L, int p, int e)
 */
 int insertElemR(Sqlist& L, int e)
 {
-	int i;
 	if (L.length == maxSize)
-		return 0;//位置错误或表长达到顺序表的最大允许值，插入不成功，返回0
+		return 0;//表长达到顺序表的最大允许值，插入不成功，返回0
 	L.data[L.length] = e;//将e放在所有元素后
 	++(L.length);//表长自增1
 	return 1;
@@ -92,4 +91,5 @@ int main02004()
 	printf("删除下标为5的元素%d后顺序表结果为：",e);
 	for (i = 0; i < L.length; i++)
 		printf("%d", L.data[i]);
+	return 0;
 }
