@@ -56,10 +56,9 @@ void merge(LNode* A, LNode* B, LNode*& C)
 		if (p->data <= q->data)
 		{
 			s = p;
-			p = p->next;
-			s->next = C->next;
-			C->next = s;
-			//p = p->next; 这段语句放本行有什么区别
+			p = p->next;//必须放在本行，若放在下一行语句后，下一行语句会改变p的下一个结点
+			s->next = C->next; 
+			C->next = s; 
 		}
 		else
 		{
@@ -82,6 +81,26 @@ void merge(LNode* A, LNode* B, LNode*& C)
 		q = q->next;
 		s->next = C->next;
 		C->next = s; 
+	}
+}
+int findAndDelete(LNode* C, int x)
+{
+	LNode* p, * q;
+	p = C;
+	while (p->next != NULL)//查找
+	{
+		if (p->next->data == x)
+			break;//找到元素
+		p = p->next;
+	}
+	if (p->next == NULL)
+		return 0;//未找到该元素，删除失败
+	else
+	{
+		q = p->next;
+		p->next = p->next->next;
+		free(q);//释放q所指结点的内存空间
+		return 1;//删除成功
 	}
 }
 void printList(LNode* C) {
@@ -111,6 +130,8 @@ int main()
 	printList(A);
 	printList(B);
 	merge(A, B, C);
+	printList(C);
+	findAndDelete(C, 10);
 	printList(C);
 	return 0;
 }
