@@ -112,7 +112,7 @@ void printList(LNode* C) {
 	}
 	printf("\n");
 }
-int main()
+int main02005()
 {
 	int a[10], b[20];
 	int i;
