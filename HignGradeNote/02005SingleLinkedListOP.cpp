@@ -83,6 +83,9 @@ void merge(LNode* A, LNode* B, LNode*& C)
 		C->next = s; 
 	}
 }
+/*
+* 当找到值为x的结点后就删除该结点
+*/
 int findAndDelete(LNode* C, int x)
 {
 	LNode* p, * q;
