@@ -43,46 +43,74 @@ void createlistF(LNode*& C, int a[], int n)
 /*
 * A和B是元素递增有序的单链表(带表头结点)，将A和B归并为递减的单链表C
 */
-void merge(LNode* A, LNode* B, LNode* &C)
+void merge(LNode* A, LNode* B, LNode*& C)
 {
 	LNode* p = A->next;
 	LNode* q = B->next;
-	C = (LNode*)malloc(sizeof(LNode));
-	C->next = NULL;
 	LNode* s;
+	C = A;
+	C->next = NULL;
+	free(B);
 	while (p != NULL && q != NULL)
 	{
-		if (p->data < q->data)
+		if (p->data <= q->data)
 		{
 			s = p;
+			p = p->next;
 			s->next = C->next;
 			C->next = s;
-			p = p->next;
+			//p = p->next; 这段语句放本行有什么区别
 		}
 		else
 		{
-			s = q;
-			q->next = C->next;
-			C->next = s;
+			s = q; 
 			q = q->next;
+			s->next = C->next;
+			C->next = s;
 		}
 	}
 	while (p != NULL)
 	{
-		s = p;
+		s = p; 
+		p = p->next;
 		s->next = C->next;
 		C->next = s;
-		p = p->next;
 	}
+	while (q != NULL)
+	{
+		s = q; 
+		q = q->next;
+		s->next = C->next;
+		C->next = s; 
+	}
+}
+void printList(LNode* C) {
+	LNode* p = C->next;
 	while (p != NULL)
 	{
-		s = q;
-		q->next = C->next;
-		C->next = s;
-		q = q->next;
+		printf("%d ", p->data);
+		p = p->next;
 	}
+	printf("\n");
 }
 int main()
 {
+	int a[10], b[20];
+	int i;
+	for (i = 0; i < 10; ++i)
+	{
+		a[i] = i;
+	}
+	for (i = 0; i < 20; ++i)
+	{
+		b[i] = i;
+	}
+	LNode* A, * B, * C;
+	createlistR(A, a, 10);
+	createlistR(B, b, 20);
+	printList(A);
+	printList(B);
+	merge(A, B, C);
+	printList(C);
 	return 0;
 }
