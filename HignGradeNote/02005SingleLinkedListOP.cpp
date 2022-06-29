@@ -56,7 +56,7 @@ void merge(LNode* A, LNode* B, LNode*& C)
 		if (p->data <= q->data)
 		{
 			s = p;
-			p = p->next;//必须放在本行，若放在下一行语句后，下一行语句会改变p的下一个结点
+			p = p->next;//必须放在本行，若放在下一行语句后，下一行语句会改变p的next指针域
 			s->next = C->next; 
 			C->next = s; 
 		}
