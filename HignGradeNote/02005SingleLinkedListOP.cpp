@@ -103,7 +103,7 @@ int findAndDelete(LNode* C, int x)
 		q = p->next;
 		p->next = p->next->next;
 		free(q);//释放q所指结点的内存空间
-		return 1;//删除成功
+		return 1; //删除成功
 	}
 }
 void printList(LNode* C) {
